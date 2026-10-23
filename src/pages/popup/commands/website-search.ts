@@ -12,25 +12,32 @@ type Template = {
 const templates: Template[] = [
   {
     title: "Google Drive",
-    url: (query) => `https://drive.google.com/drive/search?q=${query}`,
+    url: (query) =>
+      `https://drive.google.com/drive/search?q=${encodeURIComponent(query)}`,
     icon: "https://drive.google.com",
     keyword: "gd",
   },
   {
     title: "Youtube",
-    url: (query) => `https://www.youtube.com/results?search_query=${query}`,
+    url: (query) =>
+      `https://www.youtube.com/results?search_query=${encodeURIComponent(
+        query
+      )}`,
     icon: "https://www.youtube.com",
     keyword: "y",
   },
   {
     title: "Google",
-    url: (query) => `https://www.google.com/search?q=${query}`,
+    url: (query) => `https://www.google.com/search?q=${encodeURIComponent(query)}`,
     icon: "https://www.google.com",
     keyword: "g",
   },
   {
     title: "Wikipedia",
-    url: (query) => `https://en.wikipedia.org/w/index.php?search=${query}`,
+    url: (query) =>
+      `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(
+        query
+      )}`,
     icon: "https://en.wikipedia.org",
     keyword: "w",
   },

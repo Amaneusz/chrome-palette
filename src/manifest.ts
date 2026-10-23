@@ -15,7 +15,6 @@ const manifest = defineManifest(async () => ({
   version: `${major}.${minor}.${patch}.${label}`,
   description: packageJson.description,
   // options_page: "src/pages/options/index.html",
-  background: { service_worker: "src/pages/background/index.ts" },
   action: {
     default_popup: "src/pages/popup/index.html",
     default_icon: "icons/32x32.png",
@@ -38,25 +37,11 @@ const manifest = defineManifest(async () => ({
     },
   },
   permissions: [
-    "alarms",
     "tabs",
     "sessions",
     "bookmarks",
-    "management",
     "history",
     "favicon",
-  ],
-  web_accessible_resources: [
-    {
-      resources: [
-        "_favicon/*",
-        "assets/js/*.js",
-        "assets/css/*.css",
-        "assets/img/*",
-      ],
-      matches: ["*://*/*"],
-      extension_ids: ["*"],
-    },
   ],
 }));
 
